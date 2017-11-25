@@ -123,7 +123,7 @@ function parse_cell(cell) {
     parsed.noise = parseInt(match[1], 10);
   }
 
-  if ((match = cell.match(/ESSID\s*[:|=]\s*"([^"]+)"/))) {
+  if ((match = cell.match(/ESSID\s*[:|=]\s*"(.*)"\n/))) {
     parsed.ssid = match[1];
   }
 
