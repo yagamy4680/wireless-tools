@@ -53,6 +53,9 @@ function parse_status_block(block) {
   var parsed = {
     interface: block.match(/^([^\s]+)/)[1]
   };
+  if (parsed.interface.endsWith(':')) {
+    parsed.interface = parsed.interface.substring(0, parsed.interface.length - 1);
+  }
 
   if ((match = block.match(/Link encap:\s*([^\s]+)/))) {
     parsed.link = match[1].toLowerCase();
